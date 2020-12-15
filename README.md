@@ -10,7 +10,7 @@ Please also check out the project website [here](https://daveredrum.github.io/Sc
 
 For additional detail, please see the Scan2Cap paper:  
 "[Scan2Cap: Context-aware Dense Captioning in RGB-D Scans](https://arxiv.org/abs/2012.02206)"  
-by [Dave Zhenyu Chen](https://www.niessnerlab.org/members/zhenyu_chen/profile.html), [Ali Gholami](https://aligholami.github.io/), [Matthias Nießner](https://www.niessnerlab.org/members/matthias_niessner/profile.html) and [Angel X. Chang](https://angelxuanchang.github.io/)  
+by [Dave Zhenyu Chen](https://daveredrum.github.io/), [Ali Gholami](https://aligholami.github.io/), [Matthias Nießner](https://www.niessnerlab.org/members/matthias_niessner/profile.html) and [Angel X. Chang](https://angelxuanchang.github.io/)  
 from [Technical University of Munich](https://www.tum.de/en/) and [Simon Fraser University](https://www.sfu.ca/).
 
 ## Coming soon!
