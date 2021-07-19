@@ -1,0 +1,10 @@
+easydict==1.9
+h5py==2.10.0
+imageio==2.9.0
+imagesize==1.2.0
+numpy==1.19.1
+opencv-python==4.4.0.42
+pickle5==0.0.11
+pillow==7.2.0
+tensorboardx==2.1
+tqdm==4.51.0

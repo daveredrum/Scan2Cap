@@ -1,0 +1,18 @@
+#!/bin/bash
+
+#SBATCH -p debug
+#SBATCH -q normal
+#SBATCH --job-name=prep                           # Job name
+#SBATCH --mail-type=BEGIN,END,FAIL                 # Mail events (NONE, BEGIN, END, FAIL, ALL)
+#SBATCH --mail-user=zhenyu.chen@tum.de             # Where to send mail
+#SBATCH --mem=60gb                                 # Job memory request
+#SBATCH --cpus-per-gpu=8                           # Job CPUs request
+#SBATCH --gpus=rtx_2080:1                                       # Job GPUs request
+# #SBATCH -w balrog
+# #SBATCH --time=48:00:00                            # Time limit hrs:min:sec
+#SBATCH --output=/rhome/dchen/Scan2CapRelease/logs/%j.log      # Standard output and error log
+
+# Default output information
+date;hostname;pwd
+
+python scripts/compute_multiview_features.py

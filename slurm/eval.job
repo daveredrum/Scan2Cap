@@ -1,0 +1,21 @@
+#!/bin/bash
+
+#SBATCH -p debug
+#SBATCH -q normal
+#SBATCH --job-name=eval                           # Job name
+#SBATCH --mail-type=BEGIN,END,FAIL                 # Mail events (NONE, BEGIN, END, FAIL, ALL)
+#SBATCH --mail-user=zhenyu.chen@tum.de             # Where to send mail
+#SBATCH --mem=60gb                                 # Job memory request
+#SBATCH --cpus-per-gpu=8                           # Job CPUs request
+#SBATCH -G 1                                       # Job GPUs request
+# #SBATCH -w balrog
+# #SBATCH --time=48:00:00                            # Time limit hrs:min:sec
+#SBATCH --output=/rhome/dchen/Scan2CapRelease/logs/eval_%j.log      # Standard output and error log
+
+# Default output information
+date;hostname;pwd
+
+folder=2021-04-26_10-52-33_ORACLE_MASK_VOTENET_TOPDOWN10_EDGECONV2_REL_ORI
+
+# Your code
+python scripts/eval.py --folder $folder --use_multiview --use_normal --use_topdown --use_relation --num_graph_steps 2 --num_locals 10 --eval_detection --eval_pretrained

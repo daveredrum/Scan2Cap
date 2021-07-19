@@ -1,0 +1,24 @@
+#!/bin/bash
+
+#SBATCH -p debug
+#SBATCH -q normal
+#SBATCH --job-name=train                           # Job name
+#SBATCH --mail-type=BEGIN,END,FAIL                 # Mail events (NONE, BEGIN, END, FAIL, ALL)
+#SBATCH --mail-user=zhenyu.chen@tum.de             # Where to send mail
+#SBATCH --mem=60gb                                 # Job memory request
+#SBATCH --cpus-per-gpu=8                           # Job CPUs request
+#SBATCH --gpus=rtx_3090:1                                       # Job GPUs request
+# #SBATCH -w balrog
+# #SBATCH --time=48:00:00                            # Time limit hrs:min:sec
+#SBATCH --output=/rhome/dchen/Scan2CapRelease/logs/train_%j.log      # Standard output and error log
+
+# Default output information
+date;hostname;pwd
+
+# Your code
+datetime=$(date +%Y-%m-%d_%H-%M-%S)
+
+name=xyz_multiview_normal_topdown10_edgeconv2_rel_ori
+name=${name^^}
+
+python scripts/train.py --tag $name --use_multiview --use_normal --use_topdown --use_relation --use_orientation --num_graph_steps 2 --num_locals 10 --batch_size 16 --epoch 50

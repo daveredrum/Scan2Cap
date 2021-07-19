@@ -1,0 +1,63 @@
+# dataset
+data/scanrefer*
+data/ScanRefer*
+data/glove*
+data/scannet/scannet_data
+data/scannet/scans
+data/scannetv2_enet.pth
+data/Scan2CAD_dataset/
+data/votenet_estimated_viewpoint*
+data/nr3d*
+
+# cache
+data/scannet/__pycache__
+lib/__pycache__
+lib/pointnet2/__pycache__
+models/__pycache__
+utils/__pycache__
+
+# pointnet2
+lib/pointnet2/build/
+lib/pointnet2/dist/
+lib/pointnet2/pointnet2.egg-info/
+
+# # pretrained models
+# pretrained/
+
+# logs
+logs/
+
+# output
+outputs/
+archive/
+
+# node
+viewer/node_modules/
+viewer/server/node_modules/
+
+# build
+viewer/client/build/
+
+# features
+gt_features
+gt_features/
+data/glove.p
+data/scannet/scans
+data/scannet/scannet_data
+votenet_features
+votenet_features/
+
+# misc
+viewer/server/static/ScanNetv2/
+viewer/server/static/ScanNetv1/scans
+viewer/server/static/ScanNetv2/scans
+viewer/server/static/ScanNetv2/ScanNet_objects
+pretrained_bbox/
+scripts/__pycache__/
+
+# Mac
+.DS_Store
+data/.DS_Store
+
+# IDE
+.vscode
