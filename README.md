@@ -165,10 +165,11 @@ Please refer to [`Scan2Cad-2D`](Scan2Cap-2D) for more information.
 If you found our work helpful, please kindly cite our paper via:
 ```bibtex
 @inproceedings{chen2021scan2cap,
-    title={ScanRefer: 3D Object Localization in RGB-D Scans using Natural Language},
-    author={Dave Zhenyu Chen, Ali Gholami, Matthias Nie{\ss}ner and Angel X. Chang}
-    booktitle={Proc. Computer Vision and Pattern Recognition (CVPR), IEEE},
-    year={2021}
+  title={Scan2Cap: Context-aware Dense Captioning in RGB-D Scans},
+  author={Chen, Zhenyu and Gholami, Ali and Nie{\ss}ner, Matthias and Chang, Angel X},
+  booktitle={Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition},
+  pages={3193--3203},
+  year={2021}
 }
 ```
 
