@@ -8,8 +8,6 @@ CONF = EasyDict()
 CONF.PATH = EasyDict()
 CONF.PATH.BASE = "/rhome/dchen/Scan2CapRelease/" # TODO: change this
 CONF.PATH.CLUSTER = "/cluster/balrog/dchen/Scan2CapRelease/" # TODO: change this
-# CONF.PATH.BASE = "/home/davech2y/Scan2CapExp/" # TODO: change this
-# CONF.PATH.CLUSTER = "/home/davech2y/Scan2CapExp/" # TODO: change this
 CONF.PATH.DATA = os.path.join(CONF.PATH.BASE, "data")
 CONF.PATH.SCANNET = os.path.join(CONF.PATH.DATA, "scannet")
 CONF.PATH.LIB = os.path.join(CONF.PATH.BASE, "lib")
@@ -50,6 +48,7 @@ CONF.SCANNETV2_LIST = os.path.join(CONF.PATH.SCANNET_META, "scannetv2.txt")
 
 # output
 CONF.PATH.OUTPUT = os.path.join(CONF.PATH.BASE, "outputs")
+CONF.PATH.AXIS_ALIGNED_MESH = os.path.join(CONF.PATH.OUTPUT, "ScanNet_axis_aligned_mesh")
 
 # pretrained
 CONF.PATH.PRETRAINED = os.path.join(CONF.PATH.BASE, "pretrained")

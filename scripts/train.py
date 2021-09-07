@@ -117,11 +117,6 @@ def get_model(args, dataset, device):
         for param in model.proposal.parameters():
             param.requires_grad = False
     
-    # multi-GPU
-    if torch.cuda.device_count() > 1:
-        print("using {} GPUs...".format(torch.cuda.device_count()))
-        model = torch.nn.DataParallel(model)
-    
     # to device
     model.to(device)
 

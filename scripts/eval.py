@@ -107,11 +107,6 @@ def get_model(args, dataset, device, root=CONF.PATH.OUTPUT, eval_pretrained=Fals
         model_path = os.path.join(root, args.folder, model_name)
         model.load_state_dict(torch.load(model_path), strict=False)
         # model.load_state_dict(torch.load(model_path))
-
-    # multi-GPU
-    if torch.cuda.device_count() > 1:
-        print("using {} GPUs...".format(torch.cuda.device_count()))
-        model = torch.nn.DataParallel(model)
     
     # to device
     model.to(device)

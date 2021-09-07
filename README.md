@@ -127,6 +127,8 @@ If you want to visualize the results, please run this script to generate boundin
 python scripts/visualize.py --folder <output_folder> --scene_id <scene_id> --use_multiview --use_normal --use_topdown --use_relation --num_graph_steps 2 --num_locals 10
 ```
 
+> Note that you need to run `python scripts/export_scannet_axis_aligned_mesh.py` first to generate axis-aligned ScanNet mesh files.
+
 ### 3D dense captioning with ground truth bounding boxes
 
 For experimenting the captioning performance with ground truth bounding boxes, you need to extract the box features with a pre-trained extractor. The pretrained ones are already in `pretrained`, but if you want to train a new one from scratch, run the following script:
@@ -156,6 +158,36 @@ For evaluating the model, run the following command:
 ```shell
 python scripts/eval_pretrained.py --folder <ouptut_folder> --mode gt --use_topdown --use_relation --use_orientation --num_graph_steps 2 --num_locals 10 
 ```
+
+### 3D dense captioning with pre-trained VoteNet bounding boxes
+
+If you would like to play around with the pre-trained VoteNet bounding boxes, you can directly use the pre-trained VoteNet in `pretrained`. After picking the model you like, run the following command to extract the bounding boxes and associated box features:
+
+```shell
+python scripts/extract_votenet_features.py --batch_size 16 --epoch 100 --use_multiview --use_normal --train --val
+```
+
+Now the box features are ready. Next step: run the following command to start training the dense captioning pipeline with the extraced VoteNet boxes:
+
+```shell
+python scripts/train_pretrained.py --mode votenet --batch_size 32 --use_topdown --use_relation --use_orientation --num_graph_steps 2 --num_locals 10
+```
+
+For evaluating the model, run the following command:
+
+```shell
+python scripts/eval_pretrained.py --folder <ouptut_folder> --mode votenet --use_topdown --use_relation --use_orientation --num_graph_steps 2 --num_locals 10 
+```
+
+### Experiments on ReferIt3D
+
+Yes, of course you can use the ReferIt3D dataset for training and evaluation. Simply download ReferIt3D dataset and unzip it under `data`, then run the following command to convert it to ScanRefer format:
+
+```shell
+python scripts/organize_referit3d.py
+```
+
+Then you can simply specify the dataset you would like to use by `--dataset ReferIt3D` in the aforementioned steps. Have fun!
 
 ### 2D Experiments
 

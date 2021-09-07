@@ -32,15 +32,12 @@ from models.capnet import CapNet
 from lib.eval_helper import eval_cap
 from scripts.colors import COLORS
 
-SCANNET_MESH = "/cluster/sorona/dchen/ScanNet_axis_aligned_mesh/{}/axis_aligned_scene.ply"
+SCANNET_MESH = os.path.join(CONF.PATH.AXIS_ALIGNED_MESH, "{}", "axis_aligned_scene.ply")
 SCANNET_AGGR = os.path.join(CONF.PATH.SCANNET_SCANS, "{}/{}_vh_clean.aggregation.json") # scene_id, scene_id
 
 SCANREFER_TRAIN = json.load(open(os.path.join(CONF.PATH.DATA, "ScanRefer_filtered_train.json")))
 SCANREFER_VAL = json.load(open(os.path.join(CONF.PATH.DATA, "ScanRefer_filtered_val.json")))
-# SCANREFER_DUMMY = json.load(open(os.path.join(CONF.PATH.DATA, "ScanRefer_dummy.json")))
 SCANREFER_ORGANIZED = json.load(open(os.path.join(CONF.PATH.DATA, "ScanRefer_filtered_organized.json")))
-
-VOTENET_DATABASE = h5py.File(os.path.join(CONF.PATH.VOTENET_FEATURES, "val.hdf5"), "r", libver="latest")
 
 # constants
 DC = ScannetDatasetConfig()
