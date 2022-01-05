@@ -149,7 +149,7 @@ def export(mesh_file, agg_file, seg_file, meta_file, label_map_file, output_file
         np.save(output_file+'_sem_label.npy', label_ids)
         np.save(output_file+'_ins_label.npy', instance_ids)
         np.save(output_file+'_bbox.npy', instance_bboxes)
-        np.save(output_file+'_aligned_bbox.npy', instance_bboxes)
+        np.save(output_file+'_aligned_bbox.npy', aligned_instance_bboxes)
 
     return mesh_vertices, aligned_vertices, label_ids, instance_ids, instance_bboxes, aligned_instance_bboxes
 
