@@ -13,6 +13,37 @@ For additional detail, please see the Scan2Cap paper:
 by [Dave Zhenyu Chen](https://daveredrum.github.io/), [Ali Gholami](https://aligholami.github.io/), [Matthias Nießner](https://www.niessnerlab.org/members/matthias_niessner/profile.html) and [Angel X. Chang](https://angelxuanchang.github.io/)  
 from [Technical University of Munich](https://www.tum.de/en/) and [Simon Fraser University](https://www.sfu.ca/).
 
+## :star2: Benchmark Challenge :star2:
+We provide the Scan2Cap Benchmark Challenge for benchmarking your model automatically on the hidden test set! Learn more at our [benchmark challenge website](https://kaldir.vc.in.tum.de/scanrefer_benchmark/benchmark_captioning).
+After finishing training the model, please download [the benchmark data](http://kaldir.vc.in.tum.de/scanrefer_benchmark_data.zip) and put the unzipped `ScanRefer_filtered_test.json` under `data/`. Then, you can run the following script the generate predictions:
+```shell
+python benchmark/predict.py --folder <output_folder> --use_multiview --use_normal --use_topdown --use_relation --num_graph_steps 2 --num_locals 10
+```
+Note that the flags must match the ones set before training. The training information is stored in `outputs/<folder_name>/info.json`. The generated predictions are stored in `outputs/<folder_name>/pred.json`.
+For submitting the predictions, please compress the `pred.json` as a .zip or .7z file and follow the [instructions](http://kaldir.vc.in.tum.de/scanrefer_benchmark/documentation) to upload your results.
+
+### Local Benchmarking on Val Set
+
+Before submitting the results on the test set to the official benchmark, you can also benchmark the performance on the val set. Run the following script to generate GTs for val set first:
+
+```shell
+python scripts/build_benchmark_gt.py --split val
+```
+
+> NOTE: don't forget to change the `DATA_ROOT` in `scripts/build_benchmark_gt.py`
+
+Generate the predictions on val set:
+
+```shell
+python benchmark/predict.py --folder <output_folder> --use_multiview --use_normal --use_topdown --use_relation --num_graph_steps 2 --num_locals 10 --test_split val
+```
+
+Evaluate the predictions on the val set:
+
+```shell
+python benchmark/eval.py --split val --path <path to predictions> --verbose
+```
+
 ## Data
 
 ### ScanRefer

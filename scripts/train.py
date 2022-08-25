@@ -341,7 +341,6 @@ if __name__ == "__main__":
     parser.add_argument("--use_multiview", action="store_true", help="Use multiview images.")
     parser.add_argument("--use_topdown", action="store_true", help="Use top-down attention for captioning.")
     parser.add_argument("--use_relation", action="store_true", help="Use object-to-object relation in graph.")
-    parser.add_argument("--use_new", action="store_true", help="Use new Top-down module.")
     parser.add_argument("--use_orientation", action="store_true", help="Use object-to-object orientation loss in graph.")
     parser.add_argument("--use_distance", action="store_true", help="Use object-to-object distance loss in graph.")
     parser.add_argument("--use_pretrained", type=str, help="Specify the folder name containing the pretrained detection module.")
