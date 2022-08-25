@@ -59,7 +59,7 @@ wget <download_link>
 
 ### Scan2CAD
 
-As learning the object relative orientations in the relational graph requires CAD model alignment annotations in Scan2CAD, please refer to the [Scan2CAD official release](https://github.com/skanti/Scan2CAD#download-scan2cad-dataset-annotation-data) (you need ~8MB on your disk). Once the data is downloaded, extract the zip file under `data/` and change the path to Scan2CAD annotations (`CONF.PATH.SCAN2CAD`) in `lib/config.py` . As Scan2CAD doesn't cover all instances in ScanRefer, please download the [mapping file](http://kaldir.vc.in.tum.de/aligned_cad2inst_id.json) and place it under `CONF.PATH.SCAN2CAD`. Parsing the raw Scan2CAD annotations by the following command:
+As learning the relative object orientations in the relational graph requires CAD model alignment annotations in Scan2CAD, please refer to the [Scan2CAD official release](https://github.com/skanti/Scan2CAD#download-scan2cad-dataset-annotation-data) (you need ~8MB on your disk). Once the data is downloaded, extract the zip file under `data/` and change the path to Scan2CAD annotations (`CONF.PATH.SCAN2CAD`) in `lib/config.py` . As Scan2CAD doesn't cover all instances in ScanRefer, please download the [mapping file](http://kaldir.vc.in.tum.de/aligned_cad2inst_id.json) and place it under `CONF.PATH.SCAN2CAD`. Parsing the raw Scan2CAD annotations by the following command:
 
 ```shell
 python scripts/Scan2CAD_to_ScanNet.py
