@@ -13,6 +13,11 @@ For additional detail, please see the Scan2Cap paper:
 by [Dave Zhenyu Chen](https://daveredrum.github.io/), [Ali Gholami](https://aligholami.github.io/), [Matthias Nießner](https://www.niessnerlab.org/members/matthias_niessner/profile.html) and [Angel X. Chang](https://angelxuanchang.github.io/)  
 from [Technical University of Munich](https://www.tum.de/en/) and [Simon Fraser University](https://www.sfu.ca/).
 
+## News
+
+- [08/22/2022] We launched the [Scan2Cap Dense Captioning Benchmark](https://kaldir.vc.in.tum.de/scanrefer_benchmark/benchmark_captioning). Come check it out!
+- [08/22/2022] We released a new implementation of Scan2Cap with 1）__8x__ faster training time; 2) revised evaluation metrics; 3) benchmark toolbox. Please see more details in the [faster-captioning repo](https://github.com/daveredrum/faster-captioning).
+
 ## :star2: Benchmark Challenge :star2:
 We provide the Scan2Cap Benchmark Challenge for benchmarking your model automatically on the hidden test set! Learn more at our [benchmark challenge website](https://kaldir.vc.in.tum.de/scanrefer_benchmark/benchmark_captioning).
 After finishing training the model, please download [the benchmark data](http://kaldir.vc.in.tum.de/scanrefer_benchmark_data.zip) and put the unzipped `ScanRefer_filtered_test.json` under `data/`. Then, you can run the following script the generate predictions:
