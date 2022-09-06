@@ -61,3 +61,7 @@ data/.DS_Store
 
 # IDE
 .vscode
+
+# benchmark
+benchmark/build/
+benchmark/box_intersection.c*

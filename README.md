@@ -49,6 +49,12 @@ Evaluate the predictions on the val set:
 python benchmark/eval.py --split val --path <path to predictions> --verbose
 ```
 
+(Optional) Compile accelerated generalized IoU for faster evaluation:
+
+```shell
+python cython_compile.py build_ext --inplace
+```
+
 ## Data
 
 ### ScanRefer
